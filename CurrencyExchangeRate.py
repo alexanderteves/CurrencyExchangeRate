@@ -8,6 +8,5 @@ class CurrencyExchangeRate():
 			url = 'http://finance.yahoo.com/d/quotes.csv?s=%s%s=X&f=l1' % (a, b)
 			rate = urllib2.urlopen(url).read().rstrip()
 			return Decimal(rate)
-		except Exception, e:
-			print e
-			return 0.00
+		except:
+			return Decimal('-1.00')
